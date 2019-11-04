@@ -24,8 +24,11 @@ class Waiter
     end
 
     def best_tipper
-        tips = meals.sort_by {|meal| meal.tip}
-        tips[-1].customer
+        # tips = meals.sort_by {|meal| meal.tip}
+        # tips[-1].customer
+
+        tips = meals.max {|meal| meal.tip}
+        p tips
     end
 
 end
